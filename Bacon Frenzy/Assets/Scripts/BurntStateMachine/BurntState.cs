@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurntState : MonoBehaviour
+public abstract class BurntState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected BurntStateController burntStateController;
 
-    // Update is called once per frame
-    void Update()
+    public abstract void CheckTransitions();
+    public abstract void Act();
+    public virtual void OnStateEnter() { }
+    public virtual void OnStateExit() { }
+    public BurntState(BurntStateController burntStateController)
     {
-        
+        this.burntStateController = burntStateController;
     }
 }
