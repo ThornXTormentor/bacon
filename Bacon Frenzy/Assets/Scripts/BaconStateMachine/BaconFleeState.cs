@@ -21,7 +21,7 @@ public class BaconFleeState : BaconState
         if (baconStateController.enemyToFlee != null)
         {
             destination = baconStateController.enemyToFlee.transform;
-            baconStateController.ai.SetTarget(destination);
+            baconStateController.ai.SetTarget(destination);  // Needs to change to where the player is + a distance.
         }
     }
     public override void OnStateEnter()
